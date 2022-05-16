@@ -85,9 +85,10 @@ my_data = {
     "waist_hip_ratio": waist_hip_ratio
 }
 
-my_df = pd.DataFrame(data=my_data, index=[0])
+
 
 if (button):
+    my_df = pd.DataFrame(data=my_data, index=[0])
     prediction = classifier.predict(my_df)[0]
     if (prediction):
         st.write("#### You have diabetes")
