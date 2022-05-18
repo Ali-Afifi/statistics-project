@@ -68,26 +68,24 @@ gender_num = 1 if gender=="male" else 0
 
 button = st.button("Predict")
 
-my_data = {
-    "cholesterol": cholesterol,
-    "glucose": glucose,
-    "hdl_chol": hdl_chol,
-    "chol_hdl_ratio": chol_hdl_ratio,
-    "age": age,
-    "gender": gender_num,
-    "height": height,
-    "weight": weight,
-    "bmi": bmi,
-    "systolic_bp": systolic_bp,
-    "diastolic_bp": diastolic_bp,
-    "waist": waist,
-    "hip": hip,
-    "waist_hip_ratio": waist_hip_ratio
-}
-
-
 
 if (button):
+    my_data = {
+        "cholesterol": cholesterol,
+        "glucose": glucose,
+        "hdl_chol": hdl_chol,
+        "chol_hdl_ratio": chol_hdl_ratio,
+        "age": age,
+        "gender": gender_num,
+        "height": height,
+        "weight": weight,
+        "bmi": bmi,
+        "systolic_bp": systolic_bp,
+        "diastolic_bp": diastolic_bp,
+        "waist": waist,
+        "hip": hip,
+        "waist_hip_ratio": waist_hip_ratio
+    }
     my_df = pd.DataFrame(data=my_data, index=[0])
     prediction = classifier.predict(my_df)[0]
     if (prediction):
