@@ -51,16 +51,38 @@ st.title("Predicting Diabetes")
 st.write("### Please Enter your data")
 
 gender = st.selectbox("Select Gender", ("male", "female"))
-age = st.select_slider("Age", options=range(19, 93), value=21)
-height = st.select_slider("Height in inches", options=range(52, 76), value=65)
-weight = st.select_slider("Weight in pounds", options=range(99, 325), value=250)
-cholesterol = st.select_slider("Your Cholesterol Level", options=range(78, 443), value=170)
-glucose = st.select_slider("Your Glucose Level", options=range(48, 385), value=125)
-hdl_chol = st.select_slider("Your HDL Level", options=range(12, 120), value=40)
-systolic_bp = st.select_slider("Systolic blood pressure", options=range(90,250), value=110)
-diastolic_bp = st.select_slider("Diastolic blood pressure", options=range(48,124), value=70)
-waist = st.select_slider("Waist circumfrance in inches", options=range(26,56), value=37)
-hip = st.select_slider("Hip circumfrance in inches", options=range(30,64), value=40)
+st.write("gender: ", gender)
+
+age = st.number_input("Age", min_value=1, value=25, step=1)
+st.write('The current number is ', age)
+
+height = st.number_input("Height in inches", min_value=1, value=65, step=1)
+st.write('The current number is ', height)
+
+weight = st.number_input("Weight in pounds", min_value=1, value=180, step=1)
+st.write('The current number is ', weight)
+
+cholesterol = st.number_input("Your Cholesterol Level", value=170)
+st.write('The current number is ', cholesterol)
+
+glucose = st.number_input("Your Glucose Level", value=125)
+st.write('The current number is ', glucose)
+
+hdl_chol = st.number_input("Your HDL Level", min_value=1, value=40)
+st.write('The current number is ', hdl_chol)
+
+systolic_bp = st.number_input("Systolic blood pressure", value=110)
+st.write('The current number is ', systolic_bp)
+
+diastolic_bp = st.number_input("Diastolic blood pressure", value=70)
+st.write('The current number is ', diastolic_bp)
+
+waist = st.number_input("Waist circumference in inches", value=37, step=1)
+st.write('The current number is ', waist)
+
+hip = st.number_input("Hip circumference in inches", min_value=1, value=40)
+st.write('The current number is ', hip)
+
 bmi = (703 * weight) / (height**2)
 chol_hdl_ratio = cholesterol / hdl_chol
 waist_hip_ratio = waist / hip
