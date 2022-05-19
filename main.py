@@ -60,7 +60,7 @@ hdl_chol = st.select_slider("Your HDL Level", options=range(12, 120), value=40)
 systolic_bp = st.select_slider("Systolic blood pressure", options=range(90,250), value=110)
 diastolic_bp = st.select_slider("Diastolic blood pressure", options=range(48,124), value=70)
 waist = st.select_slider("Waist circumfrance in inches", options=range(26,56), value=37)
-hip = st.select_slider("Waist circumfrance in inches", options=range(30,64), value=40)
+hip = st.select_slider("Hip circumfrance in inches", options=range(30,64), value=40)
 bmi = (703 * weight) / (height**2)
 chol_hdl_ratio = cholesterol / hdl_chol
 waist_hip_ratio = waist / hip
