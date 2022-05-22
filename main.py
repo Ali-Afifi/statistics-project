@@ -38,7 +38,7 @@ for i in range(1, 89):
 
 req_k_value = error_rate.index(min(error_rate))+1
 
-classifier = KNeighborsClassifier(n_neighbors=40)
+classifier = KNeighborsClassifier(n_neighbors=req_k_value)
 classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 accuracy = accuracy_score(y_pred, y_test)*100
