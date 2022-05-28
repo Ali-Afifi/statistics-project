@@ -1,5 +1,7 @@
 # statistics project
 
+check the project here --> [the website](https://share.streamlit.io/ali-afifi/statistics-project/main/main.py)
+
 ## course code: SBE 2240 
 
 ## team 28
