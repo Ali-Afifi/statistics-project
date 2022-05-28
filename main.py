@@ -56,34 +56,34 @@ st.write("gender: ", gender)
 age = st.number_input("Age", min_value=1, value=25, step=1)
 st.write('The current number is ', age)
 
-height = st.number_input("Height in inches", min_value=1, value=65, step=1)
+height = st.number_input("Height in cm", min_value=1, value=175, step=1) 
 st.write('The current number is ', height)
 
-weight = st.number_input("Weight in pounds", min_value=1, value=180, step=1)
+weight = st.number_input("Weight in kg", min_value=1, value=80, step=1) 
 st.write('The current number is ', weight)
 
-cholesterol = st.number_input("Your Cholesterol Level", value=170)
+cholesterol = st.number_input("Your Cholesterol Level in mg/dl", value=170)
 st.write('The current number is ', cholesterol)
 
-glucose = st.number_input("Your Glucose Level", value=125)
+glucose = st.number_input("Your Glucose Level in mg/dl", value=125)
 st.write('The current number is ', glucose)
 
-hdl_chol = st.number_input("Your HDL Level", min_value=1, value=40)
+hdl_chol = st.number_input("Your HDL Level in mg/dl", min_value=1, value=40)
 st.write('The current number is ', hdl_chol)
 
-systolic_bp = st.number_input("Systolic blood pressure", value=110)
+systolic_bp = st.number_input("Systolic blood pressure in mmHg", value=110)
 st.write('The current number is ', systolic_bp)
 
-diastolic_bp = st.number_input("Diastolic blood pressure", value=70)
+diastolic_bp = st.number_input("Diastolic blood pressure in mmHg", value=70)
 st.write('The current number is ', diastolic_bp)
 
-waist = st.number_input("Waist circumference in inches", value=37, step=1)
+waist = st.number_input("Waist circumference in cm", min_value=1, value=80, step=1) 
 st.write('The current number is ', waist)
 
-hip = st.number_input("Hip circumference in inches", min_value=1, value=40)
+hip = st.number_input("Hip circumference in cm", min_value=1, value=80) 
 st.write('The current number is ', hip)
 
-bmi = (703 * weight) / (height**2)
+bmi = (703 * weight * 2.20462) / ((height / 2.54)**2)
 chol_hdl_ratio = cholesterol / hdl_chol
 waist_hip_ratio = waist / hip
 gender_num = 1 if gender=="male" else 0 
@@ -99,13 +99,13 @@ if (button):
         "chol_hdl_ratio": chol_hdl_ratio,
         "age": age,
         "gender": gender_num,
-        "height": height,
-        "weight": weight,
+        "height": height / 2.54,
+        "weight": weight * 2.20462,
         "bmi": bmi,
         "systolic_bp": systolic_bp,
         "diastolic_bp": diastolic_bp,
-        "waist": waist,
-        "hip": hip,
+        "waist": waist / 2.54,
+        "hip": hip / 2.54,
         "waist_hip_ratio": waist_hip_ratio
     }
     my_df = pd.DataFrame(data=my_data, index=[0])
